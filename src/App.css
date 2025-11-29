@@ -1,0 +1,36 @@
+.App {
+  min-height: 100vh;
+  background-color: #f5f6fa;
+}
+
+.main-content {
+  padding-top: 80px;
+  min-height: calc(100vh - 80px);
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 18px;
+  color: #667eea;
+}
+
+.error-message {
+  background-color: #fed7d7;
+  color: #c53030;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 20px 0;
+  border-left: 4px solid #f56565;
+}
+
+.success-message {
+  background-color: #c6f6d5;
+  color: #276749;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 20px 0;
+  border-left: 4px solid #48bb78;
+}
