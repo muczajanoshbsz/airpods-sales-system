@@ -8,67 +8,203 @@
   left: 0;
   right: 0;
   z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 
 .header-brand {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .sales-title {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
   margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(45deg, #fff, #e2e8f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .header-nav {
   display: flex;
-  gap: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1;
+  max-width: 500px;
 }
 
 .nav-btn {
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.2);
   color: white;
-  padding: 10px 20px;
+  padding: 10px 16px;
   border-radius: 25px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
 }
 
 .nav-btn:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .nav-btn.active {
   background: rgba(255, 255, 255, 0.9);
   color: #667eea;
   border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 768px) {
+.header-user {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.user-email {
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+}
+
+.logout-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
   .header-content {
-    flex-direction: column;
     gap: 15px;
   }
   
   .sales-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+  
+  .nav-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sales-header {
+    padding: 0.8rem 0;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .header-brand {
+    order: 1;
   }
   
   .header-nav {
+    order: 3;
     width: 100%;
+    max-width: none;
+    gap: 6px;
+  }
+  
+  .header-user {
+    order: 2;
+  }
+  
+  .sales-title {
+    font-size: 1.3rem;
+  }
+  
+  .nav-btn {
+    padding: 8px 12px;
+    font-size: 11px;
+    flex: 1;
     justify-content: center;
+    min-width: 0;
+  }
+  
+  .user-info {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+  
+  .user-email {
+    font-size: 12px;
+  }
+  
+  .logout-btn {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sales-title {
+    font-size: 1.2rem;
+  }
+  
+  .nav-btn {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+  
+  .nav-btn span {
+    display: none;
+  }
+  
+  .user-info {
+    padding: 6px 10px;
+  }
+  
+  .user-email {
+    font-size: 11px;
   }
 }
